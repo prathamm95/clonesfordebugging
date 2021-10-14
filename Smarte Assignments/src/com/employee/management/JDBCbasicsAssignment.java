@@ -12,15 +12,15 @@ public class JDBCbasicsAssignment {
 
 
         insertEmployeeData();
-//        deleteEmployeeData();
-//        updateEmployeeFirstName();
-//        updateEmployeeLastName();
-//        updateEmployeeEmail();
-//        displayAllEmployeeData();
-//        searchById();
-//        searchByFirstName();
-//        searchByLastName();
-//        searchByEmail();
+        deleteEmployeeData();
+        updateEmployeeFirstName();
+        updateEmployeeLastName();
+        updateEmployeeEmail();
+        displayAllEmployeeData();
+        searchById();
+        searchByFirstName();
+        searchByLastName();
+        searchByEmail();
 
 //        String url = "jdbc:mysql://localhost:3306/employees_database";
 

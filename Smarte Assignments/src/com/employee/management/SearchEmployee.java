@@ -31,17 +31,26 @@ public class SearchEmployee {
             //execute the prepared statement query and assign it to the ResultSet variable
             ResultSet resultSet = prepStatement.executeQuery();
 
-            while (resultSet.next()) {
+            if (resultSet.next() == false) {
+                System.out.println("No such record found in the database. Re-enter a correct input.");
+                searchById();
 
-                int id = resultSet.getInt("id");
-                String firstName = resultSet.getString("first_name");
-                String lastName = resultSet.getString("last_name");
-                String email = resultSet.getString("email");
+            } else {
 
-                System.out.println("ID : " + id + ", Full Name - " + firstName + " " + lastName + ", Email - " + email);
+                while (resultSet.next()) {
 
-                System.out.println("Searched the entry successfully");
+                    int id = resultSet.getInt("id");
+                    String firstName = resultSet.getString("first_name");
+                    String lastName = resultSet.getString("last_name");
+                    String email = resultSet.getString("email");
+
+                    System.out.println("ID : " + id + ", Full Name - " + firstName + " " + lastName + ", Email - " + email);
+
+                    System.out.println("Searched the entry successfully");
+
+                }
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -50,14 +59,14 @@ public class SearchEmployee {
 
     public static void searchByFirstName() {
 
-        String url = "jdbc:mysql://localhost:3306/employees_database";
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter First Name of the Employee: ");
-        String enterFirstName = scanner.next();
-
         try {
+
+            String url = "jdbc:mysql://localhost:3306/employees_database";
+
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Enter First Name of the Employee: ");
+            String enterFirstName = scanner.next();
 
             //establish connection to the database
             Connection conn = DriverManager.getConnection(url, "root", "1234");
@@ -74,17 +83,27 @@ public class SearchEmployee {
             //execute the prepared statement query
             ResultSet resultSet = prepStatement.executeQuery();
 
-            while (resultSet.next()) {
 
-                int id = resultSet.getInt("id");
-                String firstName = resultSet.getString("first_name");
-                String lastName = resultSet.getString("last_name");
-                String email = resultSet.getString("email");
+            if (resultSet.next() == false) {
+                System.out.println("No such record found in the database. Re-enter a correct input.");
+                searchByFirstName();
 
-                System.out.println("ID : " + id + ", Full Name - " + firstName + " " + lastName + ", Email - " + email);
+            } else {
 
-                System.out.println("Searched the entry successfully");
+                while (resultSet.next()) {
+
+                    int id = resultSet.getInt("id");
+                    String firstName = resultSet.getString("first_name");
+                    String lastName = resultSet.getString("last_name");
+                    String email = resultSet.getString("email");
+
+                    System.out.println("ID : " + id + ", Full Name - " + firstName + " " + lastName + ", Email - " + email);
+
+                    System.out.println("Searched the entry successfully");
+
+                }
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -117,17 +136,26 @@ public class SearchEmployee {
             //execute the prepared statement query
             ResultSet resultSet = prepStatement.executeQuery();
 
-            while (resultSet.next()) {
+            if (resultSet.next() == false) {
+                System.out.println("No such record found in the database. Re-enter a correct input.");
+                searchByLastName();
 
-                int id = resultSet.getInt("id");
-                String firstName = resultSet.getString("first_name");
-                String lastName = resultSet.getString("last_name");
-                String email = resultSet.getString("email");
+            } else {
 
-                System.out.println("ID : " + id + ", Full Name - " + firstName + " " + lastName + ", Email - " + email);
+                while (resultSet.next()) {
 
-                System.out.println("Searched the entry successfully");
+                    int id = resultSet.getInt("id");
+                    String firstName = resultSet.getString("first_name");
+                    String lastName = resultSet.getString("last_name");
+                    String email = resultSet.getString("email");
+
+                    System.out.println("ID : " + id + ", Full Name - " + firstName + " " + lastName + ", Email - " + email);
+
+                    System.out.println("Searched the entry successfully");
+
+                }
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -160,17 +188,26 @@ public class SearchEmployee {
             //execute the prepared statement query
             ResultSet resultSet = prepStatement.executeQuery();
 
-            while (resultSet.next()) {
+            if (resultSet.next() == false) {
+                System.out.println("No such record found in the database. Re-enter a correct input.");
+                searchByEmail();
 
-                int id = resultSet.getInt("id");
-                String firstName = resultSet.getString("first_name");
-                String lastName = resultSet.getString("last_name");
-                String email = resultSet.getString("email");
+            } else {
 
-                System.out.println("ID : " + id + ", Full Name - " + firstName + " " + lastName + ", Email - " + email);
+                while (resultSet.next()) {
 
-                System.out.println("Searched the entry successfully");
+                    int id = resultSet.getInt("id");
+                    String firstName = resultSet.getString("first_name");
+                    String lastName = resultSet.getString("last_name");
+                    String email = resultSet.getString("email");
+
+                    System.out.println("ID : " + id + ", Full Name - " + firstName + " " + lastName + ", Email - " + email);
+
+                    System.out.println("Searched the entry successfully");
+
+                }
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

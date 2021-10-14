@@ -8,24 +8,24 @@ public class InsertEmployeeDataMethod {
 
     public static void insertEmployeeData() {
 
-        String url = "jdbc:mysql://localhost:3306/employees_database";
-
-        Scanner scanner = new Scanner(System.in);
-
-        //set the variables to be used for inserting values & get input from the user using the scanner object
-        System.out.print("Enter the ID: ");
-        int id = scanner.nextInt();
-
-        System.out.print("Enter your first name: ");
-        String firstName = scanner.next();
-
-        System.out.print("Enter your last name: ");
-        String lastName = scanner.next();
-
-        System.out.print("Enter your email: ");
-        String email = scanner.next();
-
         try {
+
+            String url = "jdbc:mysql://localhost:3306/employees_database";
+
+            Scanner scanner = new Scanner(System.in);
+
+            //set the variables to be used for inserting values & get input from the user using the scanner object
+            System.out.print("Enter the ID: ");
+            int id = scanner.nextInt();
+
+            System.out.print("Enter your first name: ");
+            String firstName = scanner.next();
+
+            System.out.print("Enter your last name: ");
+            String lastName = scanner.next();
+
+            System.out.print("Enter your email: ");
+            String email = scanner.next();
 
             //establish connection to the database
             Connection conn = DriverManager.getConnection(url, "root", "1234");
@@ -46,8 +46,9 @@ public class InsertEmployeeDataMethod {
             prepStatement.executeUpdate();
             System.out.println("Inserted new employee data successfully");
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Invalid ID input, please re-enter the correct ID input");
+            insertEmployeeData();
         }
 
 
