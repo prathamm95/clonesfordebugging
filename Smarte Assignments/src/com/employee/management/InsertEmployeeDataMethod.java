@@ -10,8 +10,6 @@ public class InsertEmployeeDataMethod {
 
         try {
 
-            String url = "jdbc:mysql://localhost:3306/employees_database";
-
             Scanner scanner = new Scanner(System.in);
 
             //set the variables to be used for inserting values & get input from the user using the scanner object
@@ -28,7 +26,7 @@ public class InsertEmployeeDataMethod {
             String email = scanner.next();
 
             //establish connection to the database
-            Connection conn = DriverManager.getConnection(url, "root", "1234");
+            Connection conn = ConnectionProvider.getConnection();
 
             //create a prepared statement variable
             PreparedStatement prepStatement;

@@ -1,18 +1,15 @@
 package com.employee.management;
 
 import java.sql.*;
-import java.util.Scanner;
 
 public class DisplayAllEmployees {
 
     public static void displayAllEmployeeData() {
 
-        String url = "jdbc:mysql://localhost:3306/employees_database";
-
         try {
 
             //establishing the connection object
-            Connection conn = DriverManager.getConnection(url, "root", "1234");
+            Connection conn = ConnectionProvider.getConnection();
 
             //creating a statement object to send to the database
             Statement statement = conn.createStatement();

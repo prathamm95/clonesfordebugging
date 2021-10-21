@@ -7,17 +7,15 @@ public class SearchEmployee {
 
     public static void searchById() {
 
-        String url = "jdbc:mysql://localhost:3306/employees_database";
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter the ID: ");
-        int enterID = scanner.nextInt();
-
         try {
 
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Enter the ID: ");
+            int enterID = scanner.nextInt();
+
             //establish connection to the database
-            Connection conn = DriverManager.getConnection(url, "root", "1234");
+            Connection conn = ConnectionProvider.getConnection();
 
             //create a prepared statement variable
             PreparedStatement prepStatement;
@@ -61,15 +59,13 @@ public class SearchEmployee {
 
         try {
 
-            String url = "jdbc:mysql://localhost:3306/employees_database";
-
             Scanner scanner = new Scanner(System.in);
 
             System.out.print("Enter First Name of the Employee: ");
             String enterFirstName = scanner.next();
 
             //establish connection to the database
-            Connection conn = DriverManager.getConnection(url, "root", "1234");
+            Connection conn = ConnectionProvider.getConnection();
 
             //create a prepared statement variable
             PreparedStatement prepStatement;
@@ -112,17 +108,15 @@ public class SearchEmployee {
 
     public static void searchByLastName() {
 
-        String url = "jdbc:mysql://localhost:3306/employees_database";
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter Last Name of the Employee: ");
-        String enterLastName = scanner.next();
-
         try {
 
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Enter Last Name of the Employee: ");
+            String enterLastName = scanner.next();
+
             //establish connection to the database
-            Connection conn = DriverManager.getConnection(url, "root", "1234");
+            Connection conn = ConnectionProvider.getConnection();
 
             //create a prepared statement variable
             PreparedStatement prepStatement;
@@ -164,8 +158,6 @@ public class SearchEmployee {
 
     public static void searchByEmail() {
 
-        String url = "jdbc:mysql://localhost:3306/employees_database";
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter Email of the Employee: ");
@@ -174,7 +166,7 @@ public class SearchEmployee {
         try {
 
             //establish connection to the database
-            Connection conn = DriverManager.getConnection(url, "root", "1234");
+            Connection conn = ConnectionProvider.getConnection();
 
             //create a prepared statement variable
             PreparedStatement prepStatement;

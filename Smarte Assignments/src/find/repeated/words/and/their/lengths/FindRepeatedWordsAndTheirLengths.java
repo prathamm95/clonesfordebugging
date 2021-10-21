@@ -9,6 +9,7 @@ public class FindRepeatedWordsAndTheirLengths {
 
         findRepeatedWords("I am happy and well. I am happy as health. Nobody knows me very well that is why I am happy. But Still time has come to veil. As I am done with me.");
 
+        findRepeatedWords("");
 
     }
 
@@ -19,6 +20,7 @@ public class FindRepeatedWordsAndTheirLengths {
 
         //removing the fullstops in the sentences using ".replace" method
         str = str.replace(".", "");
+        str = str.replace("happy", "health");
 
         //splitting the String str into a String array of words using ".split()" method
         String[] words = str.split(" ");

@@ -9,15 +9,13 @@ public class DeleteEmployeeDataMethod {
 
         try {
 
-            String url = "jdbc:mysql://localhost:3306/employees_database";
-
             Scanner scanner = new Scanner(System.in);
 
             System.out.print("Enter the ID: ");
             int enterID = scanner.nextInt();
 
             //establish connection to the database
-            Connection conn = DriverManager.getConnection(url, "root", "1234");
+            Connection conn = ConnectionProvider.getConnection();
 
             //create a prepared statement variable
             PreparedStatement prepStatement;
