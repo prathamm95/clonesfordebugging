@@ -8,8 +8,10 @@ public class DisplayAllEmployees {
 
         try {
 
+            ConnectionProvider cn = new ConnectionProvider();
+
             //establishing the connection object
-            Connection conn = ConnectionProvider.getConnection();
+            Connection conn = cn.getConnection();
 
             //creating a statement object to send to the database
             Statement statement = conn.createStatement();

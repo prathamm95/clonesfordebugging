@@ -9,13 +9,15 @@ public class DeleteEmployeeDataMethod {
 
         try {
 
+            ConnectionProvider cn = new ConnectionProvider();
+
             Scanner scanner = new Scanner(System.in);
 
             System.out.print("Enter the ID: ");
             int enterID = scanner.nextInt();
 
             //establish connection to the database
-            Connection conn = ConnectionProvider.getConnection();
+            Connection conn = cn.getConnection();
 
             //create a prepared statement variable
             PreparedStatement prepStatement;

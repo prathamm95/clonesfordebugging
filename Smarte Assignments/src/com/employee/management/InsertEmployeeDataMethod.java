@@ -10,6 +10,8 @@ public class InsertEmployeeDataMethod {
 
         try {
 
+            ConnectionProvider cn = new ConnectionProvider();
+
             Scanner scanner = new Scanner(System.in);
 
             //set the variables to be used for inserting values & get input from the user using the scanner object
@@ -26,7 +28,7 @@ public class InsertEmployeeDataMethod {
             String email = scanner.next();
 
             //establish connection to the database
-            Connection conn = ConnectionProvider.getConnection();
+            Connection conn = cn.getConnection();
 
             //create a prepared statement variable
             PreparedStatement prepStatement;

@@ -11,25 +11,16 @@ public class JDBCbasicsAssignment {
     public static void main(String[] args) {
 
 
-        insertEmployeeData();
-        deleteEmployeeData();
-        updateEmployeeFirstName();
-        updateEmployeeLastName();
-        updateEmployeeEmail();
-        displayAllEmployeeData();
-        searchById();
-        searchByFirstName();
-        searchByLastName();
-        searchByEmail();
-
-
-
-
-
-
-
-
-
+//        insertEmployeeData();
+//        deleteEmployeeData();
+//        updateEmployeeFirstName();
+//        updateEmployeeLastName();
+//        updateEmployeeEmail();
+//        displayAllEmployeeData()
+//        searchById();
+//        searchByFirstName();
+//        searchByLastName();
+//        searchByEmail();
 
 
 //        String url = "jdbc:mysql://localhost:3306/employees_database";

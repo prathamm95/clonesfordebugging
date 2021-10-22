@@ -6,20 +6,18 @@ import java.sql.SQLException;
 
 public class ConnectionProvider {
 
-    private static Connection conn;
+    Connection conn;
 
-    public static Connection getConnection(){
+    public Connection getConnection(){
 
         try{
-
-            if (conn == null){
 
                 //load driver class
                 Class.forName("com.mysql.jdbc.Driver");
 
                 //create connection
                 conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/employees_database","root","1234");
-            }
+
 
         } catch (Exception e){
 
